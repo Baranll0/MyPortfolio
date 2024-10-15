@@ -813,36 +813,7 @@ a:focus {
 }
 
 .portfolio #portfolio-filter {
-    padding: 0;
-    margin: -15px 0 25px 0;
-    list-style: none;
-    font-size: 0;
-    text-align: center;
-}
-
-.portfolio #portfolio-filter li {
-    cursor: pointer;
-    display: inline-block;
-    margin: 5px;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    background: #EF233C;
-    border: 2px solid transparent;
-    border-radius: 0;
-    box-shadow: inset 0 0 0 50px #EF233C;
-    transition: ease-out 0.3s;
-    -webkit-transition: ease-out 0.3s;
-    -moz-transition: ease-out 0.3s;
-}
-
-.portfolio #portfolio-filter li:hover,
-.portfolio #portfolio-filter li.filter-active {
-    color: #EF233C;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
+    display: none; /* Filtreleme özelliği kaldırıldı */
 }
 
 .portfolio .portfolio-item {
@@ -862,7 +833,7 @@ a:focus {
 .portfolio .portfolio-img img {
     position: relative;
     width: 100%; 
-    height: 100%; 
+    height: 250px; /* Resim yüksekliği sabitlendi */
     object-fit: cover;
     transform: scale(1.1);
     transition: .5s;
@@ -874,22 +845,26 @@ a:focus {
 
 .portfolio .portfolio-text {
     position: relative;
-    height: 60px;
+    height: auto; /* Yükseklik otomatik olarak ayarlanacak */
     width: calc(100% - 30px);
     margin: -30px 15px 30px 15px;
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Öğeler dikey olarak hizalanacak */
+    align-items: flex-start; /* Öğeler sola hizalanacak */
+    justify-content: center; /* Öğeler dikey olarak ortalanacak */
     background: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, .12);
+    padding: 10px; /* İçerik etrafında boşluk */
 }
 
 .portfolio .portfolio-text h3 {
-    width: calc(100% - 70px);
+    width: 100%; /* Genişlik %100 olarak ayarlandı */
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 0 15px;
+    margin: 0; /* Margin sıfırlandı */
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis; /* Uzun metinler için üç nokta (...) eklenecek */
 }
 
 .portfolio .portfolio-text a.btn {
@@ -901,6 +876,8 @@ a:focus {
     justify-content: center;
     font-size: 45px;
     font-weight: 100;
+    margin-top: 10px; /* Artı tuşu ile başlık arasında boşluk */
+    align-self: flex-end; /* Artı tuşu sağa hizalanacak */
 }
 
 .portfolio .portfolio-item:hover a.btn {
